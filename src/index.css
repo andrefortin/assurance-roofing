@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F7F8FA;
+    color: #0D1B2A;
+  }
+  #root { width: 100%; max-width: 100%; text-align: left; border: none; }
+}
+
+/* Ken Burns — GPU-safe: transform only */
+@keyframes kenBurns {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  50%  { transform: scale(1.06) translate(-1%, -0.5%); }
+  100% { transform: scale(1.12) translate(-2%, -1%); }
+}
+.ken-burns { animation: kenBurns 22s ease-in-out infinite alternate; will-change: transform; }
+
+/* Phone button pulse ring */
+@keyframes phonePulse {
+  0%   { box-shadow: 0 0 0 0   rgba(232,137,12,0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(232,137,12,0); }
+  100% { box-shadow: 0 0 0 0   rgba(232,137,12,0); }
+}
+.phone-pulse { animation: phonePulse 2.2s cubic-bezier(0.32,0.72,0,1) infinite; }
+
+/* Sticky mobile CTA slide-up */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.slide-up { animation: slideUp 0.5s cubic-bezier(0.32,0.72,0,1) forwards; }
+
+/* Noise overlay — fixed, pointer-events-none, GPU-safe */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
