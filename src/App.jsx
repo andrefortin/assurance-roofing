@@ -1286,6 +1286,29 @@ export default function App() {
     return () => window.removeEventListener('hashchange', fn)
   }, [])
 
+  // Scroll to top on page transitions; scroll to anchor on home page
+  useEffect(() => {
+    const h = window.location.hash
+    if (page === 'home' && h && h !== '#privacy' && h !== '#terms') {
+      // Home page anchor link — scroll to the section after render
+      const id = h.slice(1)
+      const attempt = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 100
+          window.scrollTo({ top, behavior: 'smooth' })
+        }
+      }
+      // Wait for React to flush the DOM, then try up to 3 times
+      setTimeout(attempt, 0)
+      setTimeout(attempt, 100)
+      setTimeout(attempt, 300)
+    } else {
+      // Legal page or bare # — scroll to absolute top
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }, [page])
+
   if (page === 'privacy') {
     return (
       <div className="font-sans">
