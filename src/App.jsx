@@ -868,7 +868,7 @@ function BottomCTA() {
 function Footer() {
   const services = ['ReRoofs & Replacements', 'Insurance Claims', 'Maintenance & Repairs', 'Storm Damage Claims', 'Financing', 'Roofing, Siding & Gutters']
   const company  = ['About Us', 'Reviews', 'Our Work', 'Careers', 'Privacy Policy', 'Terms of Service']
-  const companyLinks = ['#', '#', '#gallery', '#', '/privacy', '/terms']
+  const companyLinks = ['#', '#', '#gallery', '#', '#privacy', '#terms']
 
   return (
     <footer className="bg-[#0D1B2A] text-white pt-16 pb-8 px-4 mt-6">
@@ -922,8 +922,8 @@ function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-white/25">
           <p>© {new Date().getFullYear()} Assurance Roofing LLC · assuranceroofingus.com</p>
           <div className="flex items-center gap-5">
-            <a href="/privacy" className="hover:text-white/50 transition-colors">Privacy Policy</a>
-            <a href="/terms"   className="hover:text-white/50 transition-colors">Terms of Service</a>
+            <a href="#privacy" className="hover:text-white/50 transition-colors">Privacy Policy</a>
+            <a href="#terms"   className="hover:text-white/50 transition-colors">Terms of Service</a>
             <span>NC License #NC-67492</span>
           </div>
         </div>
@@ -961,11 +961,353 @@ function StickyMobileCTA() {
 }
 
 /* ─────────────────────────────────────────────────────────
+   PRIVACY POLICY PAGE
+───────────────────────────────────────────────────────── */
+
+function PrivacyPage() {
+  const lastUpdated = 'January 15, 2026'
+  return (
+    <div className="min-h-[100dvh] bg-[#F7F8FA]">
+      {/* Hero strip */}
+      <section className="bg-[#0D1B2A] pt-32 pb-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/70 text-[10px] font-semibold uppercase tracking-[0.2em] mb-5">
+            Legal
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Privacy Policy
+          </h1>
+          <p className="text-white/50 text-sm">
+            Effective {lastUpdated} &middot; Last updated {lastUpdated}
+          </p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="p-[5px] rounded-[2rem] bg-slate-100 ring-1 ring-black/[0.06] shadow-[0_8px_40px_rgba(13,27,42,0.1)]">
+            <div className="rounded-[calc(2rem-5px)] bg-white p-8 sm:p-10 flex flex-col gap-10">
+
+              <Section>
+                <SectionTitle>1. Information We Collect</SectionTitle>
+                <P>
+                  Assurance Roofing LLC ("Assurance Roofing," "we," "us," or "our") collects information you voluntarily provide when you interact with our website, request a quote, schedule an inspection, or contact us by phone or email. This may include:
+                </P>
+                <BulletList items={[
+                  'Personal identifiers such as your full name, email address, phone number, and property address.',
+                  'Details about your roofing project, including the type of service requested, description of damage, and preferred appointment times.',
+                  'Communication records including emails, contact form submissions, and call recordings (where disclosed).',
+                  'Technical data automatically collected when you visit our site, including IP address, browser type, device information, referring pages, and timestamps.',
+                ]} />
+              </Section>
+
+              <Section>
+                <SectionTitle>2. How We Use Your Information</SectionTitle>
+                <P>
+                  We use the information we collect to operate, maintain, and improve our services. Specifically, we use your information to:
+                </P>
+                <BulletList items={[
+                  'Provide, schedule, and fulfill the roofing services and inspections you request.',
+                  'Communicate with you about your project, appointments, estimates, and follow-up needs.',
+                  'Send you relevant service updates, seasonal maintenance reminders, and promotional offers (you may opt out at any time).',
+                  'Improve our website, services, and customer experience through analytics and feedback.',
+                  'Comply with legal obligations, resolve disputes, and enforce our Terms of Service.',
+                ]} />
+                <P>
+                  We do not sell, rent, or lease your personal information to third parties. We may share information with trusted service providers who assist us in operating our business (e.g., CRM platforms, email delivery services, payment processors), subject to strict confidentiality obligations.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>3. Cookies and Tracking Technologies</SectionTitle>
+                <P>
+                  Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors come from. You can control cookie preferences through your browser settings. Disabling cookies may affect certain functionality of our site.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>4. Data Retention</SectionTitle>
+                <P>
+                  We retain your personal information for as long as necessary to fulfill the purposes described in this policy, or as required by applicable law. Service records and correspondence are typically retained for the duration of the customer relationship plus a reasonable period thereafter for legal and business record-keeping purposes.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>5. Your Rights and Choices</SectionTitle>
+                <P>
+                  Depending on your jurisdiction, you may have the right to:
+                </P>
+                <BulletList items={[
+                  'Access the personal information we hold about you.',
+                  'Request correction of inaccurate or incomplete data.',
+                  'Request deletion of your personal information, subject to legal retention requirements.',
+                  'Opt out of marketing communications at any time by using the unsubscribe link in our emails or contacting us directly.',
+                  'File a complaint with your local data protection authority if you believe your rights have been violated.',
+                ]} />
+                <P>
+                  To exercise any of these rights, please contact us using the information provided in Section 7.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>6. Data Security</SectionTitle>
+                <P>
+                  We implement industry-standard administrative, technical, and physical safeguards to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>7. Contact Information</SectionTitle>
+                <P>
+                  If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+                </P>
+                <div className="flex flex-col gap-2 mt-3">
+                  <div className="flex items-center gap-2.5 text-sm text-slate-600"><I.Mail /><span>privacy@assuranceroofingus.com</span></div>
+                  <div className="flex items-center gap-2.5 text-sm text-slate-600"><I.Phone /><span>(704) 286-6577</span></div>
+                  <div className="flex items-start gap-2.5 text-sm text-slate-600"><span className="flex-shrink-0 mt-0.5"><I.MapPin /></span><span>650 E. Brooklyn Village Ave, Charlotte, NC 28202</span></div>
+                </div>
+              </Section>
+
+              <Section>
+                <SectionTitle>8. Changes to This Policy</SectionTitle>
+                <P>
+                  We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or operational needs. We will post the updated policy on this page and revise the "Effective" date accordingly. Continued use of our website after any changes constitutes acceptance of the revised policy.
+                </P>
+              </Section>
+
+              {/* Back link */}
+              <div className="pt-4 border-t border-slate-100">
+                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1B2A] text-white text-sm font-semibold rounded-full hover:bg-[#1E3A5F] active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] shadow-[0_2px_12px_rgba(13,27,42,0.22)]">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Back to Home
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────────────────
+   TERMS OF SERVICE PAGE
+───────────────────────────────────────────────────────── */
+
+function TermsPage() {
+  const lastUpdated = 'January 15, 2026'
+  return (
+    <div className="min-h-[100dvh] bg-[#F7F8FA]">
+      {/* Hero strip */}
+      <section className="bg-[#0D1B2A] pt-32 pb-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/70 text-[10px] font-semibold uppercase tracking-[0.2em] mb-5">
+            Legal
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Terms of Service
+          </h1>
+          <p className="text-white/50 text-sm">
+            Effective {lastUpdated} &middot; Last updated {lastUpdated}
+          </p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="p-[5px] rounded-[2rem] bg-slate-100 ring-1 ring-black/[0.06] shadow-[0_8px_40px_rgba(13,27,42,0.1)]">
+            <div className="rounded-[calc(2rem-5px)] bg-white p-8 sm:p-10 flex flex-col gap-10">
+
+              <Section>
+                <SectionTitle>1. Acceptance of Terms</SectionTitle>
+                <P>
+                  By accessing or using the Assurance Roofing website (assuranceroofingus.com), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to all terms and conditions, you must discontinue use of this website immediately. These Terms constitute a legally binding agreement between you and Assurance Roofing LLC, a North Carolina limited liability company ("Assurance Roofing," "we," "us," or "our").
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>2. Services Provided</SectionTitle>
+                <P>
+                  Assurance Roofing provides residential roofing services including but not limited to: roof replacements, storm damage restoration, insurance claims assistance, roof inspections, preventative maintenance, siding installation, and gutter system installation. All services are provided subject to a separate written agreement, proposal, or contract executed between you and Assurance Roofing. Nothing on this website constitutes a binding offer to perform services.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>3. Estimates and Pricing</SectionTitle>
+                <P>
+                  Any estimates, quotes, or pricing information provided through our website, over the phone, or via email are non-binding approximations based on the information you provide. Final pricing is determined after an in-person inspection and is documented in a formal written proposal. We reserve the right to modify pricing based on actual site conditions, material availability, and scope changes.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>4. Intellectual Property</SectionTitle>
+                <P>
+                  All content on this website, including text, graphics, logos, icons, images, photographs, and software, is the exclusive property of Assurance Roofing LLC or its content suppliers and is protected by United States and international copyright, trademark, and intellectual property laws. You may not reproduce, distribute, modify, create derivative works from, publicly display, or otherwise exploit any content without our prior written consent.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>5. User Conduct</SectionTitle>
+                <P>
+                  When using our website or communicating with us, you agree not to:
+                </P>
+                <BulletList items={[
+                  'Submit false, misleading, or fraudulent information through our contact or quote request forms.',
+                  'Use our website for any unlawful purpose or in violation of any applicable local, state, or federal law.',
+                  'Attempt to gain unauthorized access to any portion of our website, server, or systems.',
+                  'Transmit any viruses, malware, or harmful code through our contact forms or any interactive feature.',
+                  'Engage in any activity that interferes with or disrupts the proper functioning of our website.',
+                ]} />
+              </Section>
+
+              <Section>
+                <SectionTitle>6. Third-Party Links</SectionTitle>
+                <P>
+                  Our website may contain links to third-party websites or services that are not owned or controlled by Assurance Roofing. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites. You acknowledge and agree that Assurance Roofing is not liable for any damage or loss caused by your use of any third-party content or website.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>7. Limitation of Liability</SectionTitle>
+                <P>
+                  To the fullest extent permitted by applicable law, Assurance Roofing LLC, its owners, employees, contractors, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, or goodwill, arising out of or in connection with your use of or inability to use our website, whether based on warranty, contract, tort, or any other legal theory, even if we have been advised of the possibility of such damages.
+                </P>
+                <P>
+                  Our total liability for any claims arising from your use of the website is limited to the amount you paid us, if any, for accessing the website during the twelve months preceding the claim.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>8. Disclaimer of Warranties</SectionTitle>
+                <P>
+                  This website and all information, content, and services provided through it are provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not warrant that the website will be uninterrupted, error-free, secure, or free of viruses or other harmful components.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>9. Indemnification</SectionTitle>
+                <P>
+                  You agree to indemnify, defend, and hold harmless Assurance Roofing LLC, its officers, directors, employees, agents, and contractors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to your violation of these Terms, your use of the website, or your infringement of any third-party rights.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>10. Governing Law and Dispute Resolution</SectionTitle>
+                <P>
+                  These Terms shall be governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms or your use of our website shall be resolved exclusively in the state or federal courts located in Mecklenburg County, North Carolina. You agree to submit to the personal jurisdiction of such courts.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>11. Changes to Terms</SectionTitle>
+                <P>
+                  We reserve the right to modify or replace these Terms at any time at our sole discretion. We will post the updated Terms on this page and update the "Effective" date. Your continued use of the website after any changes constitutes acceptance of the revised Terms. It is your responsibility to review these Terms periodically.
+                </P>
+              </Section>
+
+              <Section>
+                <SectionTitle>12. Contact Us</SectionTitle>
+                <P>
+                  For questions about these Terms of Service, please contact us:
+                </P>
+                <div className="flex flex-col gap-2 mt-3">
+                  <div className="flex items-center gap-2.5 text-sm text-slate-600"><I.Mail /><span>legal@assuranceroofingus.com</span></div>
+                  <div className="flex items-center gap-2.5 text-sm text-slate-600"><I.Phone /><span>(704) 286-6577</span></div>
+                  <div className="flex items-start gap-2.5 text-sm text-slate-600"><span className="flex-shrink-0 mt-0.5"><I.MapPin /></span><span>650 E. Brooklyn Village Ave, Charlotte, NC 28202</span></div>
+                </div>
+              </Section>
+
+              {/* Back link */}
+              <div className="pt-4 border-t border-slate-100">
+                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1B2A] text-white text-sm font-semibold rounded-full hover:bg-[#1E3A5F] active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] shadow-[0_2px_12px_rgba(13,27,42,0.22)]">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Back to Home
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────────────────
+   LEGAL PAGE HELPERS
+───────────────────────────────────────────────────────── */
+
+function Section({ children }) {
+  return <div className="flex flex-col gap-3">{children}</div>
+}
+
+function SectionTitle({ children }) {
+  return <h2 className="text-xl font-bold text-[#0D1B2A] pb-1 border-b border-amber-200/70">{children}</h2>
+}
+
+function P({ children }) {
+  return <p className="text-sm text-slate-600 leading-relaxed">{children}</p>
+}
+
+function BulletList({ items }) {
+  return (
+    <ul className="flex flex-col gap-2 pl-5">
+      {items.map((item, i) => (
+        <li key={i} className="text-sm text-slate-600 leading-relaxed list-disc">{item}</li>
+      ))}
+    </ul>
+  )
+}
+
+/* ─────────────────────────────────────────────────────────
    APP
 ───────────────────────────────────────────────────────── */
 
 export default function App() {
   const [barVisible, setBarVisible] = useState(true)
+  const [page, setPage] = useState(() => {
+    const h = window.location.hash
+    if (h === '#privacy') return 'privacy'
+    if (h === '#terms') return 'terms'
+    return 'home'
+  })
+
+  useEffect(() => {
+    const fn = () => {
+      const h = window.location.hash
+      if (h === '#privacy') setPage('privacy')
+      else if (h === '#terms') setPage('terms')
+      else setPage('home')
+    }
+    window.addEventListener('hashchange', fn)
+    return () => window.removeEventListener('hashchange', fn)
+  }, [])
+
+  if (page === 'privacy') {
+    return (
+      <div className="font-sans">
+        {barVisible && <AnnouncementBar onDismiss={() => setBarVisible(false)} />}
+        <Nav barVisible={barVisible} />
+        <main><PrivacyPage /></main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (page === 'terms') {
+    return (
+      <div className="font-sans">
+        {barVisible && <AnnouncementBar onDismiss={() => setBarVisible(false)} />}
+        <Nav barVisible={barVisible} />
+        <main><TermsPage /></main>
+        <Footer />
+      </div>
+    )
+  }
+
   return (
     <div className="font-sans">
       {barVisible && <AnnouncementBar onDismiss={() => setBarVisible(false)} />}

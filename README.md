@@ -1,16 +1,59 @@
-# React + Vite
+# Assurance Roofing — Charlotte, NC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page marketing website for Assurance Roofing, Charlotte's trusted residential roofing company.
 
-Currently, two official plugins are available:
+**Live:** [assurance-roofing.vercel.app](https://assurance-roofing.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React 19** with Vite 8
+- **Tailwind CSS v3** — Plus Jakarta Sans font
+- **Zero runtime dependencies** beyond React/ReactDOM
+- Deployed on **Vercel**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Design System
 
-## Expanding the ESLint configuration
+| Token | Value |
+|---|---|
+| Primary | `#0D1B2A` (deep navy) |
+| Accent | `#E8890C` (amber) |
+| Background | `#F7F8FA` (cool gray) |
+| Font | Plus Jakarta Sans (300–800) |
+| Motion | `cubic-bezier(0.32,0.72,0,1)` |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Site Sections
+
+- **Hero** — Full-viewport with Ken Burns background, count-up stats bar
+- **Social Proof** — GAF, Owens Corning, CertainTeed, BBB, Angi, Google badges
+- **Services** — 6-card bento grid (Replacements, Claims, Repairs, Storm, Financing, Exteriors)
+- **Process** — 4-step timeline with double-bezel photo card
+- **Gallery** — 4 project cards with neighborhood badges
+- **Testimonials** — 3 review cards with gradient avatars
+- **Contact** — Full form with service dropdown, success state
+- **FAQ** — Animated accordion (6 questions)
+- **Bottom CTA** — Dark gradient card with phone CTA
+- **Privacy Policy** (`#privacy`) — 8-section legal page
+- **Terms of Service** (`#terms`) — 12-section legal page
+
+## Architecture
+
+Everything lives in a single `src/App.jsx` (1330 lines). No router library — hash-based navigation (`#privacy`, `#terms`) handles the three "pages." All components use the double-bezel pattern (nested `p-[5px]` shell + `rounded-[calc(…)]` core) for a machined-hardware aesthetic.
+
+Custom hooks: `useReveal` (IntersectionObserver fade-in), `useCountUp` (animated stat counters).
+
+## Getting Started
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build to dist/
+npm run preview  # preview production build
+```
+
+## Deployment
+
+Connected to Vercel via GitHub. Push to `main` triggers automatic deployment.
+
+```bash
+npx vercel --prod   # manual production deploy
+```
