@@ -2,7 +2,7 @@
 
 Single-page marketing website for Assurance Roofing, Charlotte's trusted residential roofing company.
 
-**Live:** [assurance-roofing.vercel.app](https://assurance-roofing.vercel.app)
+**Live:** [assuranceroofingus.com](https://assuranceroofingus.com)
 
 ## Tech Stack
 
