@@ -151,7 +151,7 @@ function AnnouncementBar({ onDismiss }) {
     <div className="bg-[#E8890C] text-white text-[12px] font-semibold px-4 py-2.5 flex items-center justify-center gap-3 relative z-40">
       <span className="hidden sm:inline">⚡</span>
       <span>Storm season is here — <a href="#contact" className="underline underline-offset-2">free roof inspections</a> available this week across Charlotte.</span>
-      <a href="tel:+17045550192" className="hidden sm:inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors ml-2">
+      <a href="tel:+19195200549" className="hidden sm:inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors ml-2">
         <I.Phone /> Call Now
       </a>
       <button onClick={onDismiss} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors" aria-label="Dismiss">
@@ -206,9 +206,9 @@ function Nav({ barVisible }) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href="tel:+17045550192"
+            <a href="tel:+19195200549"
               className="hidden md:flex items-center gap-1.5 px-3.5 py-2 text-[13px] font-semibold text-[#0D1B2A] hover:text-[#E8890C] transition-colors duration-200">
-              <I.Phone /> (704) 555-0192
+              <I.Phone /> (919) 520-0549
             </a>
             <a href="#contact"
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 bg-[#E8890C] text-white text-[13px] font-semibold rounded-full hover:bg-[#d17a0a] active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] shadow-[0_2px_10px_rgba(232,137,12,0.4)]">
@@ -248,9 +248,9 @@ function Nav({ barVisible }) {
           <div className="mt-8 flex flex-col items-center gap-3 w-full"
             style={{ opacity: menuOpen ? 1 : 0, transform: menuOpen ? 'translateY(0)' : 'translateY(18px)',
               transition: `opacity 0.5s cubic-bezier(0.32,0.72,0,1) ${100 + links.length * 55}ms, transform 0.5s cubic-bezier(0.32,0.72,0,1) ${100 + links.length * 55}ms` }}>
-            <a href="tel:+17045550192" onClick={() => setMenuOpen(false)}
+            <a href="tel:+19195200549" onClick={() => setMenuOpen(false)}
               className="w-full max-w-xs py-4 bg-[#E8890C] text-white text-lg font-bold rounded-full text-center phone-pulse">
-              📞 (704) 555-0192
+              📞 (919) 520-0549
             </a>
             <a href="#contact" onClick={() => setMenuOpen(false)}
               className="w-full max-w-xs py-4 border-2 border-white/30 text-white text-lg font-semibold rounded-full text-center hover:border-white/60 transition-colors">
@@ -319,10 +319,10 @@ function Hero() {
           {/* CTAs */}
           <Reveal delay={320}>
             <div className="flex flex-wrap items-center gap-4">
-              <a href="tel:+17045550192"
+              <a href="tel:+19195200549"
                 className="phone-pulse inline-flex items-center gap-2.5 px-7 py-4 bg-[#E8890C] text-white text-[15px] font-bold rounded-full hover:bg-[#d17a0a] active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
                 <I.Phone />
-                (704) 555-0192
+                (919) 520-0549
               </a>
               <a href="#contact"
                 className="group inline-flex items-center gap-2.5 px-7 py-4 bg-white/10 backdrop-blur-sm border border-white/25 text-white text-[15px] font-semibold rounded-full hover:bg-white/20 active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
@@ -694,7 +694,7 @@ function Contact() {
               </p>
               <div className="flex flex-col gap-5 pt-2">
                 {[
-                  { Icon: I.Phone,  label: '(704) 555-0192', sub: 'Mon – Sat · 7am – 7pm' },
+                  { Icon: I.Phone,  label: '(919) 520-0549', sub: 'Mon – Sat · 7am – 7pm' },
                   { Icon: I.Mail,   label: 'hello@assuranceroofingus.com', sub: 'Response within 2 hours' },
                   { Icon: I.MapPin, label: 'Charlotte, NC & Surrounding Areas', sub: 'Ballantyne, Myers Park, Dilworth, Lake Norman & more' },
                   { Icon: I.Clock,  label: '24/7 Emergency Service', sub: 'For active leaks and storm damage' },
@@ -723,7 +723,7 @@ function Contact() {
                     <p className="text-sm text-slate-500 max-w-xs leading-relaxed">We&apos;ll reach out within 2 hours to schedule your free inspection. Check your email for confirmation.</p>
                   </div>
                 ) : (
-                  <form onSubmit={e => { e.preventDefault(); setSubmitted(true) }} className="flex flex-col gap-4">
+                  <form onSubmit={async e => { e.preventDefault(); try { const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) }); if (res.ok) setSubmitted(true); else alert('Failed to send. Please call (919) 520-0549 instead.'); } catch { alert('Network error. Please call (919) 520-0549 or email hello@assuranceroofingus.com.'); } }} className="flex flex-col gap-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
                         <label className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Full Name</label>
@@ -842,9 +842,9 @@ function BottomCTA() {
                 Schedule your free inspection today. Honest assessment, no obligation, no pressure — just answers.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a href="tel:+17045550192"
+                <a href="tel:+19195200549"
                   className="phone-pulse inline-flex items-center gap-2.5 px-8 py-4 bg-[#E8890C] text-white text-[15px] font-bold rounded-full hover:bg-[#d17a0a] active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
-                  <I.Phone /> (704) 555-0192
+                  <I.Phone /> (919) 520-0549
                 </a>
                 <a href="#contact"
                   className="group inline-flex items-center gap-2.5 px-8 py-4 bg-white/10 border border-white/25 text-white text-[15px] font-semibold rounded-full hover:bg-white/20 active:scale-[0.97] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
@@ -909,7 +909,7 @@ function Footer() {
           <div>
             <h4 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35 mb-5">Contact</h4>
             <div className="flex flex-col gap-4">
-              {[{ Icon: I.Phone, t: '(704) 555-0192' }, { Icon: I.Mail, t: 'hello@assuranceroofingus.com' }, { Icon: I.MapPin, t: 'Charlotte, NC 28202' }].map(({ Icon, t }) => (
+              {[{ Icon: I.Phone, t: '(919) 520-0549' }, { Icon: I.Mail, t: 'hello@assuranceroofingus.com' }, { Icon: I.MapPin, t: 'Charlotte, NC 28202' }].map(({ Icon, t }) => (
                 <div key={t} className="flex items-center gap-2.5 text-sm text-white/55"><Icon /><span>{t}</span></div>
               ))}
               <div className="mt-1 px-3.5 py-2.5 rounded-xl bg-white/[0.06] text-xs text-white/45 leading-relaxed">
@@ -947,7 +947,7 @@ function StickyMobileCTA() {
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-[0_-4px_24px_rgba(13,27,42,0.12)] slide-up">
       <div className="flex gap-3 max-w-sm mx-auto">
-        <a href="tel:+17045550192"
+        <a href="tel:+19195200549"
           className="phone-pulse flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#E8890C] text-white text-[14px] font-bold rounded-2xl">
           <I.Phone /> Call Now
         </a>
