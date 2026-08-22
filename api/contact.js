@@ -81,7 +81,7 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error("[Email] Failed to send:", err);
     return res.status(500).json({
-      error: "Failed to send your request. Please call us at (919) 520-0549 instead.",
+      error: "Failed to send your request. Please call us at (919) 520-8118 instead.",
     });
   }
 }
